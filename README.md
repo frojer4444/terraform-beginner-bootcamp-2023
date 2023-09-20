@@ -1,5 +1,3 @@
-# Terraform Beginner Bootcamp 2023
-
 ## Semantic Versioning
 
 This project is going to utilize semantic versioning for its tagging.
@@ -130,6 +128,8 @@ We can print an env var using echo eg. `echo $Hello`
 ### AWS CLI Installation
 
 AWS CLI is installed for this project via the bash script. [`./bin/install_aws_cli`](./bin/install_aws_cli)
+readme
+
 
 [Getting Started Install (AWS CLI)](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 [AWS CLI Env Vars](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)
@@ -147,3 +147,5 @@ If it is successful, you should see a json payload return that looks like this:
 
 }
 ```
+
+We'll need to generate AWS CLI credentials from IAM user in order to use the AWS CLI
