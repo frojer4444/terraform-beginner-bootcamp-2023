@@ -231,6 +231,7 @@ terraform {
 }
 ```
 
+We have automated this workaround with the following bash script [bin/generated_tfrc_credentials](bin/generate_tfrc_credentials)
 
 
 
