@@ -5,15 +5,15 @@
   * [Consdierations with the Terraform CLI changes](#consdierations-with-the-terraform-cli-changes)
   * [Considerations for Linux Distribution](#considerations-for-linux-distribution)
   * [Refactoring into Bash Scripts](#refactoring-into-bash-scripts)
-  * [Shebang Considerations](#shebang-considerations)
+    + [Shebang Considerations](#shebang-considerations)
     + [Execution Consierations](#execution-consierations)
-  * [Linux Permissions Considerations](#linux-permissions-considerations)
-  * [Github Lifecycle (Before, Init, Command)](#github-lifecycle--before--init--command-)
-  * [Working Env Vars](#working-env-vars)
-    + [env command](#env-command)
-    + [Setting and Unsetting Env Vars](#setting-and-unsetting-env-vars)
-    + [Printing Vars](#printing-vars)
-  * [AWS CLI Installation](#aws-cli-installation)
+    + [Linux Permissions Considerations](#linux-permissions-considerations)
+- [Gitpod Lifecycle (Before, Init, Command)](#gitpod-lifecycle--before--init--command-)
+- [Working Env Vars](#working-env-vars)
+  * [env command](#env-command)
+  * [Setting and Unsetting Env Vars](#setting-and-unsetting-env-vars)
+  * [Printing Vars](#printing-vars)
+- [AWS CLI Installation](#aws-cli-installation)
 - [Terraform Basics](#terraform-basics)
   * [Terraform Registry](#terraform-registry)
   * [Terraform Console](#terraform-console)
@@ -79,7 +79,7 @@ This bash script is located here: [./bin/install_terraform_cli](./bin/install_te
 - This will allow us an easier time to debug and execute manually Terraform CLI install
 - This will allow better portability for other projects that need to install Terraform CLI
 
-### Shebang Considerations
+#### Shebang Considerations
 
 A Sheband (pronounced Sha-bang) tells the bash script what program will interpret the script. eg. `#!/bin/bash`
 
@@ -100,7 +100,7 @@ If we are using a script in .gitpod.yml, we need to point the script to a progra
 
 eg. `source ./bin/install_terraform_cli`
 
-### Linux Permissions Considerations
+#### Linux Permissions Considerations
 
 In order to make our bash scripts executable, we need to change linx permissions for the fix to be executable at the user mode.
 
@@ -115,21 +115,21 @@ chmod 744 ./bin/install_terraform_cli
 
 https://en.wikipedia.org/wiki/Chmod
 
-### Github Lifecycle (Before, Init, Command)
+## Gitpod Lifecycle (Before, Init, Command)
 
 We need to be careful when using the Init because it will not rerun if we restart an existing workspace. 
 
 https://www.gitpod.io/docs/configure/workspaces/tasks
 
-### Working Env Vars
+## Working Env Vars
 
-#### env command
+### env command
 
 We can list out all Environment Variables (Env Vars) using thte `env` command
 
 We can filter sprecifc env vars using grep eg. `env | grep AWS_`
 
-#### Setting and Unsetting Env Vars
+### Setting and Unsetting Env Vars
 
 In the terminal we can set using `export HELLO+'world'`
 
@@ -149,11 +149,11 @@ HELLO='world'
 echo $HELLO
 ```
 
-#### Printing Vars
+### Printing Vars
 
 We can print an env var using echo eg. `echo $Hello`
 
-### AWS CLI Installation
+## AWS CLI Installation
 
 AWS CLI is installed for this project via the bash script. [`./bin/install_aws_cli`](./bin/install_aws_cli)
 readme
