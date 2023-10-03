@@ -48,4 +48,26 @@ Files ending in `auto.tfvars` can automatically loads a number of variable defin
 - The terraform.tfvars.json file, if present.
 - Any *.auto.tfvars or *.auto.tfvars.json files, processed in lexical order of their filenames.
 - Any -var and -var-file options on the command line, in the order they are provided. (This includes variables set by a Terraform Cloud workspace.)
->>>>>>> 19-create-toc-readme
+
+## Dealing With Configuration Drift
+
+## What happens if we lose our state file
+
+If you lose your state file, you most likely have to tear down all of your cloud infrastructure manually.
+
+You can use Terraform import, but it won't work for all cloud resources. You need to check the terraform providers documentation for which resources support import.
+
+### Fix Missing Resources With Terraform Import
+
+`terraform import aws_s3_bucket.bucket bucket-name`
+
+[Terraform Import](https://developer.hashicorp.com/terraform/cli/import)
+[AWS S3 Bucket Import](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket#import)
+
+### Fix Manual Configuration
+
+If someone goes and deletes or modifies cloud resources manually through Clickops.
+
+If we run Terraform plan again, it will attempt to put our infrastructure back into the expected state, fixing configuration drift
+
+
