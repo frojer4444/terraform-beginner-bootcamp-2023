@@ -57,6 +57,7 @@ If you lose your state file, you most likely have to tear down all of your cloud
 
 You can use Terraform import, but it won't work for all cloud resources. You need to check the terraform providers documentation for which resources support import.
 
+##
 ### Fix Missing Resources With Terraform Import
 
 `terraform import aws_s3_bucket.bucket bucket-name`
@@ -70,4 +71,45 @@ If someone goes and deletes or modifies cloud resources manually through Clickop
 
 If we run Terraform plan again, it will attempt to put our infrastructure back into the expected state, fixing configuration drift
 
+## Fix using Terraform Refresh
+
+```sh
+terraform apply -refresh-only -auto-approve
+```
+
+## Terraform Modules
+
+### Terraform Module Structure
+
+It is recommended to place modules in a modules directory when locally developing modules but you can name it whatever you'd like.
+
+### Passing Input Variables
+
+We can pass input variables to our module
+
+The module has to declare the terraform variables in its own variables.tf
+
+```tf
+module " terrahouse_aws" {
+  source = "./modules/terrahouse_aws"
+  user_uuid = var.user_uuid
+  bucket_name = var.bucket_name
+}
+```
+
+### Modules Sources
+
+Using the source we can import the module from various places eg: 
+    -locally
+    -Github
+    Terraform Registry
+
+```tf
+module " terrahouse_aws" {
+  source = "./modules/terrahouse_aws"
+}
+```
+
+
+[Module Sources](https://developer.hashicorp.com/terraform/language/modules/sources)
 
