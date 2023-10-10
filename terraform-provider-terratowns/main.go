@@ -58,7 +58,7 @@ func Provider() *schema.Provider {
 				Type: schema.TypeString,
 				Required: true,
 				Description: "UUID for configuration",
-				//ValidateFunc: validateUUID,
+				ValidateFunc: validateUUID,
 			},
 		},
 	}
