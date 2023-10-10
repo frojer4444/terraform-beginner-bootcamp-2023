@@ -30,15 +30,15 @@ provider "terratowns" {
 #}
 
 resource "terratowns_home" "home" {
-  name = "How to play Arcanum in 2023"
-  description = <<DESCRIPTION
-  Arcanum is a game from 2001 that shipped with a lot of bugs.
-  Modders have removed all of the original issues making this game really fun
-  to play (despite the old looking graphics). This is my guide that will
-  show you how to play Arcanum without spoiling the plot.
+    name = "Metal Gear"
+    description = <<DESCRIPTION
+  The first Metal Gear on the original NES (US Version)
+  is the best video game of all time and will be available 
+  in the Metal Gear Solid Collection 1 that's coming to the
+  PS5 later this month
   DESCRIPTION
-  # domain_name = module.terrahouse_aws.cloudfront_url
-  domain_name = "3fdq3gz.cloudfront.net"
-  town = "gamers-grotto"
-  content_version = 1
+    # domain_name = module.terrahouse_aws.cloudfront_url
+    domain_name = "3fdq3gz.cloudfront.net"
+    town = "gamers-grotto"
+    content_version = 1
 }
