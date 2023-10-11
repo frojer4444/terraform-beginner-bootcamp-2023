@@ -41,7 +41,7 @@ resource "terratowns_home" "home_metalgear" {
   DESCRIPTION
     domain_name = module.home_metalgear_hosting.domain_name
     #domain_name = "3fafa3.cloudfront.net"
-    town = "missingo"
+    town = "gamers-grotto"
     content_version = var.metalgear.content_version
 }
 
@@ -66,6 +66,6 @@ resource "terratowns_home" "home_tng" {
   DESCRIPTION
     domain_name = module.home_tng_hosting.domain_name
     #domain_name = "3fafa3.cloudfront.net"
-    town = "missingo"
+    town = "video-valley"
     content_version = var.tng.content_version
 }
